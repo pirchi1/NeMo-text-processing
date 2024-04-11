@@ -104,10 +104,8 @@ class WhiteListFst(GraphFst):
             units_graph = pynini.compose(NEMO_CHAR ** (3, ...), convert_space(graph_unit | graph_unit_plural))
             graph |= units_graph
 
-        # convert to states only if comma is present before the abbreviation to avoid converting all caps words,
-        # e.g. "IN", "OH", "OK"
 
-        
+
         if input_file:
             whitelist_provided = _get_whitelist_graph(input_case, input_file)
             if not deterministic:
